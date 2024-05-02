@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+       * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Calferina';
+    font-size: 16px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    z-index: 100;
+}
+
+.nav-logo p {
+    color: black;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-menu ul li .link {
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+
+.link:hover,
+.active {
+    border-bottom: 2px solid black;
+}
+
+.btn {
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+#registerBtn {
+    margin-left: 15px;
+}
+
+.content {
+    padding: 20px;
+    margin-top: 0;
+    margin-left: -400;
+    max-width: 800px;
+    color: black;
+}
+
+.form-box {
+    display: none; /* Assuming this was related to login form */
+}
+
+.form-container {
+    display: none; /* Assuming this was related to login form */
+}
+.content {
+			padding: 150px;
+			position: absolute; /* Position the content absolutely */
+			top: 5px; /* Adjust top position */
+			left: -100px; /* Adjust left position */
+			max-width: 1090px;
+			color: black;
+}
+.content p {
+    text-align: justify;
+}
+ .content p {
+            font-size: 18px; /* Increase font size for readability */
+            line-height: 1.6; /* Increase line height for readability */
+        }
+
+.word {
+    margin-right: 10px; /* Adjust the amount of space as needed */
+}
+.corner-image {
+            position: fixed;
+            margin: 100px; /* Adjust this value to control the distance from the corners */
+        }
+
+        .upper-right {
+            top: -0px;
+            right: 0;
+        }
+
+        .lower-right {
+            bottom: -60px;
+            right: 0;
+        }
+
+
+body {
+       
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        
+    }
+
+
+
+
+      * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Calferina';
+            font-size: 16px;
+        }
+        body {
+           
+            overflow: hidden;
+            margin: 0;
+        }
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        .nav {
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+            z-index: 100;
+        }
+        .nav-logo p {
+            color: black; /* Changed to black */
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .nav-menu ul {
+            display: flex;
+            list-style-type: none;
+        }
+        .nav-menu ul li .link {
+            text-decoration: none;
+            font-weight: 500;
+            color: black; /* Changed to black */
+            padding-bottom: 15px;
+            margin: 0 25px;
+        }
+        .link:hover,
+        .active {
+            border-bottom: 2px solid black; /* Changed to black */
+        }
+        .btn {
+            width: 130px;
+            height: 40px;
+            font-weight: 500;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        #registerBtn {
+            margin-left: 15px;
+        }
+        .content {
+            padding: 20px;
+            margin-top: 0; /* Remove margin from the top */
+            margin-left:-400; /* Add margin from the left */
+            max-width: 800px;
+            color: black;
+        }
+        .form-box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* Align items to the right */
+            margin-top: 30px; /* Adjust the top margin */
+            margin-right: -490px; /* Adjust the right margin */
+        }
+        .form-container {
+            display: none;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: ;
+        }
+        #loginForm {
+            margin-top: 10px; /* Adjust the top margin for login form */
+        }
+		 #loginForm {
+        background-color: #FA8072;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #loginForm h2 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    #loginForm input[type="text"],
+    #loginForm input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    #loginForm button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    #loginForm button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+	
+    /* Existing styles remain unchanged */
+
+    /* Additional styles for login form */
+    #loginForm, #registerForm {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #loginForm h2, #registerForm h2 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    #loginForm input[type="text"],
+    #loginForm input[type="password"],
+    #registerForm input[type="text"],
+    #registerForm input[type="email"],
+    #registerForm input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    #loginForm button[type="submit"],
+    #registerForm button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    #loginForm button[type="submit"]:hover,
+    #registerForm button[type="submit"]:hover {
+        background-color: #0056b3;
+		}
+		
+		
+		
+		
+		 * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+           
+            overflow: hidden;
+            margin: 0;
+        }
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        .nav {
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+            z-index: 100;
+        }
+        .nav-logo p {
+            color: black; /* Changed to black */
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .nav-menu ul {
+            display: flex;
+            list-style-type: none;
+        }
+        .nav-menu ul li .link {
+            text-decoration: none;
+            font-weight: 500;
+            color: black; /* Changed to black */
+            padding-bottom: 15px;
+            margin: 0 25px;
+        }
+        .link:hover,
+        .active {
+            border-bottom: 2px solid black; /* Changed to black */
+        }
+        .btn {
+            width: 130px;
+            height: 40px;
+            font-weight: 500;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        #registerBtn {
+            margin-left: 15px;
+        }
+       .content {
+		padding: 20px;
+		margin-top: 0; /* Remove margin from the top */
+		margin-left:-500; /* Add margin from the left */
+		max-width: 800px;
+		color: black;
+}
+		*{  
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+           
+            overflow: hidden;
+        }
+        .wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 110vh;
+            }
+        .nav{
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+         <!--   background: linear-gradient(rgba(39,39,39, 0.6), transparent);-->
+            z-index: 100;
+        }
+        .nav-logo p{
+            color: white;
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .nav-menu ul{
+            display: flex;
+        }
+        .nav-menu ul li{
+            list-style-type: none;
+        }
+        .nav-menu ul li .link{
+            text-decoration: none;
+            font-weight: 500;
+            color: #fff;
+            padding-bottom: 15px;
+            margin: 0 25px;
+        }
+        .link:hover, .active{
+            border-bottom: 2px solid #fff;
+        }
+        .nav-button .btn{
+            width: 130px;
+            height: 40px;
+            font-weight: 500;
+           <!-- background: rgba(255, 255, 255, 0.4);-->
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+        .btn:hover{
+            background: rgba(255, 255, 255, 0.3);
+        }
+        #registerBtn{
+            margin-left: 15px;
+        }
+        .btn.white-btn{
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .btn.btn.white-btn:hover{
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .nav-menu-btn{
+            display: none;
+        }
+        .form-box{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 512px;
+            height: 420px;
+            overflow: hidden;
+            z-index: 2;
+			
+			 display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* Align items to the right */
+            margin-top: -100px; /* Adjust the top margin */
+            margin-right: -700px; /* Adjust the right margin */
+        }
+        .login-container{
+            position: absolute;
+            left: 4px;
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            transition: .5s ease-in-out;
+        }
+        .register-container{
+            position: absolute;
+            right: -520px;
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            transition: .5s ease-in-out;
+        }
+		.content {
+			padding: 150px;
+			position: absolute; /* Position the content absolutely */
+			top: 5px; /* Adjust top position */
+			left: -100px; /* Adjust left position */
+			max-width: 1090px;
+			color: black;
+}
+.content p {
+    text-align: justify;
+}
+ .content p {
+            font-size: 18px; /* Increase font size for readability */
+            line-height: 1.6; /* Increase line height for readability */
+        }
+
+.word {
+    margin-right: 10px; /* Adjust the amount of space as needed */
+}
+
+body {
+        font-family: Calferina;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      
+	
+    }
+	.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 110vh;
+ 
+}
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Font */
+        body {
+            font-family: 'Calferina', sans-serif;
+            font-size: 16px;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+            z-index: 100;
+        }
+        .nav-logo p {
+            color: black;
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .nav-menu ul {
+            display: flex;
+            list-style-type: none;
+        }
+        .nav-menu ul li .link {
+            text-decoration: none;
+            font-weight: 500;
+            color: black;
+            padding-bottom: 15px;
+            margin: 0 25px;
+        }
+        .link:hover,
+        .active {
+            border-bottom: 2px solid black;
+        }
+        .btn {
+            width: 130px;
+            height: 40px;
+            font-weight: 500;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        #registerBtn {
+            margin-left: 15px;
+        }
+
+        /* Content */
+        .content {
+            padding: 20px;
+            margin-top: 90px;
+            margin-left: 40px;
+            max-width: 800px;
+            color: black;
+            position: absolute;
+            top: 5px;
+            left: 0;
+        }
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* Form */
+        .form-box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-top: 30px;
+            margin-right: -490px;
+            position: relative;
+            z-index: 2;
+        }
+        .form-container {
+            display: none;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #loginForm h2,
+        #registerForm h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+		
+
+.nav {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center; /* Center align the navigation content */
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    z-index: 100;
+}
+	body {
+  margin: 0;
+  padding: 0;
+  background-image: url("l7.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+ 
+}
+.nav-logo p {
+            color: black;
+            font-size: 25px;
+            font-weight: 900;
+        }
+        .nav-menu ul {
+            display: flex;
+            list-style-type: none;
+        }
+        .nav-menu ul li .link {
+            text-decoration: none;
+            font-weight: 500;
+            color:#42b0b8;
+            padding-bottom: 20px;
+            margin: 0 25px;
+        }
+       .link:hover,
+        .active {
+		  
+           border-bottom: 2px solid black;
+			
+        }
+		.nav-menu ul li .link {
+    text-decoration: none;
+    font-weight: 500;
+    color: #42b0b8; /* Color for the navigation links */
+    border-bottom: none; /* Remove underline */
+}
+
+.nav-menu ul li .link:hover {
+    color: #42b0b8; /* Change color on hover if needed */
+}
+.nav-menu ul li .link {
+    text-decoration: none; /* Remove default underline */
+    font-weight: 500;
+    color: #42b0b8; /* Change the color of the links */
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+
+.nav-menu ul li .link:hover {
+    border-bottom: 2px solid #42b0b8; /* Change the color of the underline on hover */
+}
+		
+		
+		
+
+		
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+		  
+             <div class="nav-logo" style="margin: 0px; position: absolute; top: 9px; left: 18px;">
+            <img src="k10.png" alt="Logo description" style="width: 170px; height: auto;">
+</div>
+
+            <div class="nav-menu" id="navMenu">
+                 <ul>
+        <li><a href="v.html" class="link">Home</a></li>
+        <li><a href="blogg.html#" class="link active">Blog</a></li>
+        <li><a href="vega.html" class="link">calculator</a></li>
+        <li><a href="cont.html" class="link">Contat us</a></li>
+    </ul>
+            </div>
+			<!-- <div class="nav-button">
+             <button class="btn" id="loginBtn" onclick="toggleForm('login')" style="background-color: #42b0b8; color: white;">Sign In</button>
+<button class="btn" id="registerBtn" onclick="toggleForm('register')" style="background-color: #42b0b8; color: white;">Sign Up</button>
+
+
+            </div>-->
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+			
+          
+           
+        </nav>
+       <div class="content">
+      <h1 style="font-size: 35px;color: #42b0b8;">Types of diabetes</h1><br><br>
+       <p>There are a few different types of diabetes:</p><br><br>
+	  <p> <strong>1. Type 1 : </strong>Type 1 diabetes is an autoimmune disease. The immune system attacks and destroys cells in the pancreas, where insulin is made. It’s unclear what causes this attack.</p><br>
+	   <p><strong>2. Type 2: </strong>Type 2 diabetes occurs when your body becomes resistant to insulin, and sugar builds up in your blood. It’s the most common type—about 90% to 95%Trusted Source of people living with diabetes have type 2.</P><br>
+	   <p><strong>3. Type 1.5: </strong>Type 1.5 diabetes is also known as latent autoimmune diabetes in adults (LADA). It occurs during adulthood and sets in gradually like type 2 diabetes. LADA is an autoimmune disease that cannot be treated by diet or lifestyle.</p><br>
+       <p><strong>4.Gestational: </strong>Gestational diabetes is high blood sugar during pregnancy. Insulin-blocking hormones produced by the placenta cause this type of diabetes.</p>
+       
+		<!--<img src="final.png" alt="Upper Image" class="corner-image upper-right" style="width: 250px; height: 250px;"> <!-- Adjust width and height as needed -->
+
+    <!-- Image in the lower right corner -->
+   <!-- <img src="j.jpg" alt="Lower Image" class="corner-image lower-right" style="width: 250px; height: 250px;"> <!-- Adjust width and height as needed -->
+   </div>
+	
+        <div class="form-box">
+            <div class="form-container" id="loginForm">
+                <h2>Login</h2>
+                <form action="#" method="post">
+                    <input type="text" placeholder="Username" required><br><br>
+                    <input type="password" placeholder="Password" required><br><br>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+            <div class="form-container" id="registerForm">
+                <h2>Register</h2>
+                <form action="#" method="post">
+                    <input type="email" placeholder="Email" required><br><br>
+                    <input type="password" placeholder="Password" required><br><br>
+                    <input type="checkbox" id="agreeCheckbox">
+                    <label for="agreeCheckbox">I agree to the terms and conditions</label><br><br><br>
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+   
+
+</body>
+</html>

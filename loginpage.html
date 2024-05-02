@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    /* Your CSS styles */
+	   .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        .nav {
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+            z-index: 100;
+        }
+        .nav-logo p {
+            color: black; /* Changed to black */
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .nav-menu ul {
+            display: flex;
+            list-style-type: none;
+        }
+        .nav-menu ul li .link {
+            text-decoration: none;
+            font-weight: 500;
+            color: black; /* Changed to black */
+            padding-bottom: 15px;
+            margin: 0 25px;
+        }
+        .link:hover,
+        .active {
+            border-bottom: 2px solid black; /* Changed to black */
+        }
+        .btn {
+            width: 130px;
+            height: 40px;
+            font-weight: 500;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+        .btn:hover {
+            background: rgba(0, 116, 217, 0.7);
+        }
+        #registerBtn {
+            margin-left: 15px;
+        }
+        .content {
+            padding: 20px;
+            margin-top: 0; /* Remove margin from the top */
+            margin-left:-400; /* Add margin from the left */
+            max-width: 800px;
+            color: black;
+        }
+        .form-box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* Align items to the right */
+            margin-top: 30px; /* Adjust the top margin */
+            margin-right: -490px; /* Adjust the right margin */
+        }
+        .form-container {
+            display: none;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: ;
+        }
+        #loginForm {
+            margin-top: 10px; /* Adjust the top margin for login form */
+        }
+		 #loginForm {
+        background-color: #0074D9;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: rgba(0, 116, 217, 0.7);
+    }
+
+    #loginForm h2 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    #loginForm input[type="text"],
+    #loginForm input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    #loginForm button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #0074D9;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    #loginForm button[type="submit"]:hover {
+        background-color: #0074D9;
+    }
+	
+    /* Existing styles remain unchanged */
+
+    /* Additional styles for login form */
+    #loginForm, #registerForm {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: rgba(0, 116, 217, 0.7);
+    }
+
+    #loginForm h2, #registerForm h2 {
+        margin-bottom: 20px;
+        color: #0074D9;
+    }
+
+    #loginForm input[type="text"],
+    #loginForm input[type="password"],
+    #registerForm input[type="text"],
+    #registerForm input[type="email"],
+    #registerForm input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    #loginForm button[type="submit"],
+    #registerForm button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #0074D9;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    #loginForm button[type="submit"]:hover,
+    #registerForm button[type="submit"]:hover {
+        background-color: #0074D9;
+		}
+		
+		
+		
+		
+		 * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+       
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        .nav {
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100px;
+                 padding-bottom: 15px;
+            margin: 0 25px;
+        }
+        .link:hover,
+        .active {
+            border-bottom: 2px solid black; /* Changed to black */
+        }
+        .btn {
+            width: 130px;
+            height: 40px;
+            font-weight: 500;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+        .btn:hover {
+            background: rgba(0, 116, 217, 0.7);
+        }
+        #registerBtn {
+            margin-left: 15px;
+        }
+       .content {
+		padding: 20px;
+		margin-top: 0; /* Remove margin from the top */
+		margin-left:-500; /* Add margin from the left */
+		max-width: 800px;
+		color: black;
+}
+		
+        .wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 110vh;
+
+        }
+        .nav{
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+         <!--   background: linear-gradient(rgba(39,39,39, 0.6), transparent);-->
+            z-index: 100;
+        }
+        .nav-logo p{
+            color: white;
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .nav-menu ul{
+            display: flex;
+        }
+        .nav-menu ul li{
+            list-style-type: none;
+        }
+        .nav-menu ul li .link{
+            text-decoration: none;
+            font-weight: 500;
+            color: #fff;
+            padding-bottom: 15px;
+            margin: 0 25px;
+        }
+        .link:hover, .active{
+            border-bottom: 2px solid #fff;
+        }
+        .nav-button .btn{
+            width: 130px;
+            height: 40px;
+            font-weight: 500;
+           <!-- background: rgba(255, 255, 255, 0.4);-->
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+        .btn:hover{
+            background: rgba(0, 116, 217, 0.7);
+        }
+        #registerBtn{
+            margin-left: 15px;
+        }
+        .btn.white-btn{
+            background: rgba(0, 116, 217, 0.7);
+        }
+        .btn.btn.white-btn:hover{
+            background: rgba(0, 116, 217, 0.7);
+        }
+        .nav-menu-btn{
+            display: none;
+        }
+        .form-box{
+            position: relative;
+			top: -80px; /* Adjust the distance from the top */
+			right: -150px; /* Adjust the distance from the right */
+			width: 300px; /* Adjust the width as needed */
+			height: 200px; /* Adjust the height as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 512px;
+            height: 420px;
+            overflow: hidden;
+            z-index: 2;
+			
+			 display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* Align items to the right */
+            margin-top: -100px; /* Adjust the top margin */
+            margin-right:-500px; /* Adjust the right margin */
+        }
+        .login-container{
+            position: absolute;
+            left: 90px;
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            transition: .5s ease-in-out;
+        }
+        .register-container{
+            position: absolute;
+            right: -520px;
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            transition: .5s ease-in-out;
+        }
+		.content {
+			padding: 150px;
+			position: absolute; /* Position the content absolutely */
+			top: 5px; /* Adjust top position */
+			left: -100px; /* Adjust left position */
+			max-width: 1090px;
+			color: black;
+}
+.content p {
+    text-align: justify;
+}
+ .content p {
+            font-size: 18px; /* Increase font size for readability */
+            line-height: 1.6; /* Increase line height for readability */
+        }
+
+.word {
+    margin-right: 10px; /* Adjust the amount of space as needed */
+}
+
+  .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 110vh;
+  
+}
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Font */
+       
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+            z-index: 100;
+        }
+        .nav-logo p {
+            color: white;
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .nav-menu ul {
+            display: flex;
+            list-style-type: none;
+        }
+        .nav-menu ul li .link {
+            text-decoration: none;
+            font-weight: 500;
+            color: white;
+            padding-bottom: 15px;
+            margin: 0 25px;
+        }
+        .link:hover,
+        .active {
+            border-bottom: 2px solid white;
+        }
+        .btn {
+            width: 130px;
+            height: 40px;
+            font-weight: 500;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+        .btn:hover {
+            background: rgba(0, 116, 217, 0.7);
+        }
+        #registerBtn {
+            margin-left: 20px;
+        }
+
+        /* Content */
+        .content {
+            padding: 20px;
+            margin-top: 150px;
+            margin-left: 40px;
+            max-width: 800px;
+            color: black;
+            position: absolute;
+            top: 5px;
+            left: 0;
+        }
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* Form */
+        .form-box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-top: 30px;
+            margin-right: -490px;
+            position: relative;
+            z-index: 2;
+        }
+        .form-container {
+            display: none;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #0074D9;
+            box-shadow:rgba(0, 116, 217, 0.7);
+        }
+        #loginForm h2,
+        #registerForm h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #0074D9;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button[type="submit"]:hover {
+            background-color: #0074D9;
+        }
+		
+
+.blue-button {
+  background-color: #0074D9; /* Your desired color */
+}
+.white-text-button {
+  color: white;
+}
+.nav-link {
+    color: #0074D9;
+}
+
+.login-button {
+    background-color: #0074D9;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+ .login-box {
+    width: 900px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #0074D9;
+    box-shadow: rgba(0, 116, 217, 0.7);
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+
+  .login-button {
+    background-color:#0074D9;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+.login-button {
+    background-color: #0074D9;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+   line-height: 100px;
+            z-index: 100;
+        }
+        .nav-logo p {
+            color: #42b0b8;; /* Changed to black */
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .nav-menu ul {
+            display: flex;
+            list-style-type: none;
+        }
+        .nav-menu ul li .link {
+            text-decoration: none;
+            font-weight: 500;
+            color: #42b0b8;; /* Changed to black */
+		}
+		
+body {
+    overflow: hidden; /* This will remove the scroll bar from the entire page */
+}
+
+/* Or, if you want to target a specific element */
+.element-class {
+    overflow: hidden; /* This will remove the scroll bar from the specified element */
+}
+.nav {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center; /* Center align the navigation content */
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    z-index: 100;
+}
+	
+.nav {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between; /* Spread navigation content across the width */
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    z-index: 100;
+}
+
+
+
+/* Styles for the Sign In and Sign Up links */
+.nav-auth-links a {
+    margin-left: 20px; /* Add some space between the links */
+}
+
+/* Positioning for the authentication links */
+.sign-in-link {
+    position: absolute;
+    right: 200px; /* Adjust as needed */
+}
+
+.sign-up-link {
+    position: absolute;
+    right: 20px; /* Adjust as needed */
+}
+ body {
+  margin: 0;
+  padding: 0;
+  background-image: url("l7.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+	.nav-logo img {
+  float: left; /* move the image to the left */
+  /* or */
+  float: right; /* move the image to the right */
+}
+
+
+.live-chat-button {
+  text-decoration: none; /* Remove underline from links inside buttons with class live-chat-button */
+}
+.live-chat-button {
+  text-decoration: none; /* Remove underline from links inside buttons with class live-chat-button */
+  color: white; /* Set the text color to white */
+}	
+/* Style the hover message */
+
+ body {
+        font-family: Calferina, Arial, sans-serif;
+        font-size: 16px;
+        text-align: justify;
+        line-height: 1.5;
+    }
+.custom-alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.alert-content {
+    text-align: center;
+	 
+}
+
+.btn-ok {
+    background-color: #42b0b8; /* Change button color here */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.btn-ok:hover {
+    background-color: #0074D9; /* Change button color on hover if needed */
+}	
+			
+	
+.nav-menu ul li .link {
+    text-decoration: none; /* Remove default underline */
+    font-weight: 500;
+    color: #42b0b8; /* Change the color of the links */
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+
+.nav-menu ul li .link:hover {
+    border-bottom: 2px solid #42b0b8; /* Change the color of the underline on hover */
+}
+.nav-menu ul li .link {
+    text-decoration: none;
+    font-weight: 500;
+    color: #42b0b8; /* Color for the navigation links */
+    border-bottom: none; /* Remove underline */
+}
+
+.nav-menu ul li .link:hover {
+    color: #42b0b8; /* Change color on hover if needed */
+}
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+<!-- Add a div at the top of your HTML body -->
+
+
+  <div class="wrapper">
+    <nav class="nav">
+       <div class="nav-logo">
+            <img src="k10.png" alt="Logo description" style="margin: 20px 20px; width: 180px; height: auto;">
+        </div>
+      <div class="nav-menu" id="navMenu">
+         <ul>
+          <li><a href="v.html" class="link active">Home</a></li>
+          <li><a href="#" class="link" onclick="showAlertAndLogin()">Blog</a></li>
+         <li><a href="#" class="link" onclick="showAlertAndLogin('calculator')">Calculator</a></li>
+          <li><a href="cont.html" class="link">Contact us</a></li>
+        </ul>
+      </div>
+	 
+      <div class="nav-button">
+        <button class="btn" id="loginBtn" onclick="toggleForm('login')" style="background-color: #42b0b8; color: white;">Sign In</button>
+        <button class="btn" id="registerBtn" onclick="toggleForm('register')" style="background-color: #42b0b8; color: white;">Sign Up</button>
+      </div>
+    </nav>
+	
+     <div class="content">
+      <!--<h1 style="font-size: 36px;">A Comprehensive Guide</h1><br>
+        <strong><p>Types|Prediabetes|Symptoms|Causes|Complications|Treatment|Exercise|Diet|Diagnosis|</p>
+		<p>Prevention|Risk factors|In pregnancy|Takeaway|In children|Comments</p></strong><br><br>
+      
+        
+		<p>
+		<span style="font-size: larger;">Diabetes mellitus is a metabolic disease that causes high blood sugar. Your body either doesn’t make enough insulin or can’t effectively use the insulin it makes.</span></p><br><br>
+
+		<p>The hormone insulin moves sugar from the blood into your cells to be stored or used for energy. If this malfunctions, you may have diabetes.</p><br><br>
+
+<p>Untreated high blood sugar from diabetes can damage your nerves, eyes, kidneys, and other organs. But educating yourself about diabetes and taking steps to prevent or manage it can help you protect your health.</p>-->
+<p style="font-size: 36px; color: #42b0b8;">Blood Sugar Level</p><br>
+
+	<p>Diabetes is a chronic condition that affects how your body processes glucose (sugar). It’s essential to manage blood sugar levels effectively to prevent complications. Let’s explore the key aspects of diabetes.When your blood sugar levels fall within the recommended ranges, it’s a sign your diabetes treatment and management plan is working. You and your doctor can determine your exact blood sugar targets. Meanwhile, these general guidelines can help.
+    Diabetes impacts your body’s ability to control your blood sugar (glucose) levels. Uncontrolled blood sugar can lead to serious complications, which is why monitoring your blood sugar and keeping it within recommended ranges is so important.
+    Your recommended blood sugar range can be impacted by a variety of factors such as your age, overall health, and diabetes management goals.
+    The charts in this article will help you understand the recommended ranges for blood sugar as well as for A1C.</p>
+
+
+   </div>
+	
+    <div class="form-box">
+      <div class="form-container" id="loginForm">
+        <h2 style="text-align: center;">Login</h2>
+
+        <form action="#" method="post" onsubmit="return signIn()">
+         <input type="email" id="email" placeholder="Email" required><br><br>
+
+         <input type="password" id="password" placeholder="Password" required><br><br>
+
+          <button type="submit" style="background-color: #42b0b8;><a href="blogg.html"  style="color: white;">Login</a></button>
+        </form>
+      </div>
+      <div class="form-container" id="registerForm" style="display: none;">
+      <h2 style="text-align: center;">Register</h2>
+
+        <form action="#" method="post">
+        <input type="email" id="email" placeholder="Email" required><br><br>
+
+         <input type="password" id="password" placeholder="Password" required><br>
+
+          <input type="checkbox" id="agreeCheckbox"><label for="agreeCheckbox"> I agree to the terms and conditions</label><br>
+           <button type="submit"  style="background-color: #42b0b8;><a href="blogg.html"  style="color: white;">Register</a></button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ <script>
+    var isLoggedIn = false; 
+
+    function showAlertAndLogin() {
+    
+    Swal.fire({
+        title: 'Please sign in or sign up to access the blog content.',
+        icon: 'info',
+        showCancelButton: false,
+        confirmButtonColor: '#42b0b8', 
+        confirmButtonText: 'OK'
+    }).then((result) => {
+      
+        if (result.isConfirmed) {
+            toggleForm('login');
+        }
+    });
+}
+function showAlertAndLogin(action) {
+			
+    Swal.fire({
+        title: 'Please sign in or sign up to access the ' + action + ' content.',
+        icon: 'info',
+        showCancelButton: false,
+        confirmButtonColor: '#42b0b8', // Customize the confirm button color
+        confirmButtonText: 'OK'
+    }).then((result) => {
+        // Show the login form only if the user clicks the "OK" button
+        if (result.isConfirmed) {
+            toggleForm('login');
+        }
+    });
+}
+    function signIn() {
+        // Perform sign-in logic here (replace with your authentication logic)
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+
+        // Check if the email contains an "@" symbol and password has at least 8 characters
+        if (email.includes('@') && password.length >= 8) {
+            isLoggedIn = true; // Update the login status to true
+            redirectToBlog(); // Redirect to the blog page after successful sign-in
+        } else {
+            if (!email.includes('@')) {
+                alert('Please enter a valid email address.');
+            } else {
+                alert('Password must be at least 8 characters long.');
+            }
+        }
+
+        return false; // Prevents the form from submitting
+    }
+
+    function redirectToBlog() {
+        // Replace 'blog.html' with the actual URL of your blog page
+        window.location.href = 'blogg.html';
+    }
+
+    function toggleForm(form) {
+        var loginForm = document.getElementById('loginForm');
+        var registerForm = document.getElementById('registerForm');
+
+        if (form === 'login' || form === 'register') {
+            loginForm.style.display = form === 'login' ? 'block' : 'none';
+            registerForm.style.display = form === 'register' ? 'block' : 'none';
+        }
+    }
+	
+
+	
+	
+</script>
+
+</body>
+</html>
