@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  background-image: url("l6.jpg");
+ background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+    /* Move navigation bar to the top */
+    .nav {
+      position: fixed;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 100px;
+      line-height: 100px;
+      z-index: 100;
+    }
+
+    main {
+      padding: 30px;
+      margin-top: 20px; /* Add space after the navigation bar */
+    }
+
+    section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .contact-method {
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      width: calc(33% - 20px); /* Adjust for responsive design */
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      cursor: pointer; /* Simulate button effect */
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .contact-method img {
+      width: 75px;
+      height: 75px;
+      margin-bottom: 10px;
+    }
+
+    .contact-method h3 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    .contact-method p {
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .contact-method a {
+      background-color: #42b0b8;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    footer {
+      background-color: #42b0b8;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* Animations */
+    .contact-method:hover {
+      transform: scale(1.02); /* Slight zoom on hover */
+    }
+
+    .contact-method h3 {
+      animation: text-color-change 2s infinite alternate; /* Optional: Text color change animation */
+    }
+
+    @keyframes text-color-change {
+      from { color: #42b0b8; }
+      to { color: #42b0b8; } /* Adjust colors to your preference */
+    }
+
+    /* Centered heading and adjusted margin */
+    h2 {
+      text-align: center;
+      margin-top: 20px; /* Adjust space after navigation */
+    }
+	 * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Font */
+        
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+            z-index: 100;
+        }
+        .nav-logo p {
+            color: black;
+            font-size: 25spx;
+            font-weight: 600;
+        }
+        .nav-menu ul {
+            display: flex;
+            list-style-type: none;
+        }
+        .nav-menu ul li .link {
+            text-decoration: none;
+            font-weight: 500;
+            color: black;
+            padding-bottom: 15px;
+            margin: 0 25px;
+        }
+        .link:hover,
+        .active {
+            border-bottom: 2px solid black;
+        }
+        .btn {
+            width: 130px;
+            height: 40px;
+            font-weight: 500;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        #registerBtn {
+            margin-left: 15px;
+        }
+
+        /* Content */
+        .content {
+            padding: 20px;
+            margin-top: 100px;
+            margin-left: 40px;
+            max-width: 800px;
+            color: black;
+            position: absolute;
+            top: 5px;
+            left: 0;
+        }
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* Form */
+        .form-box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-top: 30px;
+            margin-right: -490px;
+            position: relative;
+            z-index: 2;
+        }
+        .form-container {
+            display: none;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color:#42b0b8;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #loginForm h2,
+        #registerForm h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #42b0b8;;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button[type="submit"]:hover {
+            background-color: #42b0b8;;
+        }
+		
+
+
+h2 {
+      text-align: center;
+      margin-top: -60px; /* Adjust space after navigation */
+    }
+	.nav {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center; /* Center align the navigation content */
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    z-index: 100;
+}
+  html, body {
+  margin: 0;
+  padding: 0;
+  background-image: url("l7.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%; /* Ensure the html and body elements occupy the full viewport height */
+}
+
+body {
+    overflow: hidden; /* This will remove the scroll bar from the entire page */
+}
+
+/* Or, if you want to target a specific element */
+.element-class {
+    overflow: hidden; /* This will remove the scroll bar from the specified element */
+}
+ body {
+        font-family: Calferina, Arial, sans-serif;
+        font-size: 16px;
+        text-align: justify;
+        line-height: 1.5;
+    }
+	body {
+  margin: 0;
+  padding: 0;
+  background-image: url("l7.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Ensures the background covers the entire viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        
+.nav-menu ul li .link {
+    text-decoration: none;
+    font-weight: 500;
+    color: #42b0b8; /* Color for the navigation links */
+    border-bottom: none; /* Remove underline */
+}
+
+.nav-menu ul li .link:hover {
+    color: #42b0b8; /* Change color on hover if needed */
+}
+.nav-menu ul li .link {
+    text-decoration: none; /* Remove default underline */
+    font-weight: 500;
+    color: #42b0b8; /* Change the color of the links */
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+
+.nav-menu ul li .link:hover {
+    border-bottom: 2px solid #42b0b8; /* Change the color of the underline on hover */
+}
+
+
+
+	
+  </style>
+</head>
+
+<body>
+  <header>
+  </header>
+
+  <main>
+    <nav class="nav">
+     <div class="nav-logo" style="margin: 10px; position: absolute; top: -1px; left: 10px;">
+    <img src="k10.png" alt="Logo description" style="width: 180px; height: auto;">
+</div>
+
+      <div class="nav-menu">
+        <ul>
+          <li><a href="v.html" class="link ">Home</a></li>
+          <li><a href="blogg.html" class="link" id="blogLink" onclick="moveToBlogPage()">Blog</a></li>
+          <li><a href="vega.html" class="link">Calculator</a></li>
+          <li><a href="cont.html" class="link active">Contact us</a></li>
+        </ul>
+      </div>
+	 <!-- <div class="nav-button">
+               <button class="btn" id="loginBtn" onclick="toggleForm('login')" style="background-color: #42b0b8; color: white;">Sign In</button>
+<button class="btn" id="registerBtn" onclick="toggleForm('register')" style="background-color: #42b0b8; color: white;">Sign Up</button>
+
+
+            </div>-->
+    </nav>
+
+   <h2 style="color: #42b0b8;">We're Here to Help You Thrive!</h2><br><br>
+
+
+    <section id="contact-us">
+	
+	
+     
+      <div class="contact-method email">
+        <!--<img src="images/mailbox-icon.png" alt="Email Icon">-->
+        <h3>Email Us</h3><br>
+        <p>Got a question or feedback? We'd love to hear from you!</p><br>
+       <a id="sendEmailLink" href="#">Send an Email</a>
+      </div>
+     
+      <div class="contact-method community">
+       <!-- <img src="images/community-icon.png" alt="Community Icon">-->
+        <h3>Join the Diabetes Community Forum</h3><br>
+        <p>Connect, share experiences, and learn from others.</p><br>
+        <a href="https://www.diabetesforum.com/forums/general-diabetes-discussions.15/">Visit the Forum</a>
+		
+		
+      </div>
+	   <div class="contact-method chat">
+        <!--<img src="images/chat-icon.png" alt="Chat Icon">-->
+        <h3>Live Chat</h3><br>
+        <p>Connect with a real person for immediate assistance.</p><br>
+        <a href="contact.html" class="live-chat-button">Start Chat</a>
+      </div>
+	
+   
+          
+       
+    </div>
+    </section>
+  </main>
+  <script>
+   function sendEmail() {
+           
+            var emailAddress = 'vegashini4@gmail.com';
+            var subject = encodeURIComponent('Subject goes here');
+            var body = encodeURIComponent('Body goes here');
+            var mailtoLink = 'mailto:' + emailAddress + '?subject=' + subject + '&body=' + body;
+            
+           
+            window.location.href = mailtoLink;
+        }
+
+        
+        document.getElementById('sendEmailLink').addEventListener('click', function(event) {
+            event.preventDefault(); 
+            sendEmail(); 
+        });
+    </script>
+  

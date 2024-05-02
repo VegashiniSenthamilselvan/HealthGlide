@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Unique styling for the page */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #42b0b8;;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 800px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #42b0b8;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .chat-container {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .user-message,
+    .bot-message {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+    .user-bubble,
+    .bot-bubble {
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+    .user-bubble {
+      background-color: #42b0b8;;
+      color: #333;
+    }
+    .bot-bubble {
+      background-color: #42b0b8;;
+      color: #42b0b8;;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+	 body {
+  margin: 0;
+  padding: 0;
+  background-image: url("phone123.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* Water background with opacity */
+body {
+  background-image: url("l7.jpg"); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8; /* Adjust opacity for desired visibility */
+}
+
+/* Mirrored text effect */
+.user-message::after,
+.bot-message::after {
+  content: attr(data-message); /* Inherit the original message content */
+  position: absolute;
+  top: 0;
+  left: 0; /* Overlap the original text slightly */
+  transform: scaleY(-1); /* Flip vertically for mirror effect */
+  color: #fff; /* Use white for mirrored text */
+  opacity: 0.4; /* Reduce opacity for subtle effect */
+  margin-top: 2px; /* Add a slight offset for the mirrored text */
+}
+ body {
+        font-family: Calferina, Arial, sans-serif;
+        font-size: 16px;
+        text-align: justify;
+        line-height: 1.5;
+    }
+
+.nav-menu ul li .link {
+    text-decoration: none;
+    font-weight: 500;
+    color: #42b0b8; /* Color for the navigation links */
+    border-bottom: none; /* Remove underline */
+}
+
+.nav-menu ul li .link:hover {
+    color: #42b0b8; /* Change color on hover if needed */
+}
+.nav-menu ul li .link {
+    text-decoration: none; /* Remove default underline */
+    font-weight: 500;
+    color: #42b0b8; /* Change the color of the links */
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+
+.nav-menu ul li .link:hover {
+    border-bottom: 2px solid #42b0b8; /* Change the color of the underline on hover */
+}
+
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+   <div class="nav-logo">
+            <!--<img src="k7.png" alt="Logo description" style="margin: 20px 20px; width: 120px; height: auto;">-->
+        </div>
+    <h1>Chat with DiaBot - Your Diabetes Buddy! </h1>
+    <p>Hi there! I'm DiaBot, your diabetes assistant. Ask me anything about diabetes management!  For specific medical advice, it's always best to consult with a doctor or registered dietitian.</p>
+    <div class="chat-container">
+      <div class="bot-message"> Hello! I'm DiaBot, your diabetes companion . How can I help you today?</div>
+    </div>
+    <input type="text" id="userInput" placeholder="What would you like to know about diabetes?" aria-label="Type your question about diabetes management">
+  
+    
+  </div>
+
+  
+
+
+  <script>
+  const chatContainer = document.querySelector('.chat-container');
+  const userInput = document.getElementById('userInput');
+
+  
+  function handleUserInput() {
+    const userMessage = userInput.value.trim();
+    if (userMessage) {
+      appendMessage(userMessage, 'user-message');
+      const botReply = generateBotReply(userMessage); 
+      appendMessage(botReply, 'bot-message');
+      userInput.value = '';
+    }
+  }
+
+  
+
+
+  function appendMessage(message, className) {
+    const messageElement = document.createElement('div');
+    messageElement.className = className;
+    messageElement.textContent = message;
+    chatContainer.appendChild(messageElement);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+  }
+
+  
+
+
+
+
+  function generateBotReply(userMessage) {
+ 
+  if (userMessage.toLowerCase().includes('hi')) {
+    return "Hi!  How can I help you today?";
+  } else if (userMessage.toLowerCase().includes('diabetes')) {
+    return "Diabetes is a chronic (long-lasting) health condition that affects how your body turns food into energy. Your body breaks down most of the food you eat into sugar (glucose) and releases it into your bloodstream. When your blood sugar goes up, it signals your pancreas to release insulin.";
+  } else if (userMessage.toLowerCase().includes('symptoms')) {
+    return "Disclaimer:I can't give specific medical advice. However, some general symptoms of diabetes can include increased thirst, frequent urination, fatigue, and blurry vision. If you're concerned about diabetes, it's important to consult with a doctor.";
+  } else if (userMessage.toLowerCase().includes('causes')) {
+    return "There are two main types of diabetes: type 1 and type 2. Type 1 diabetes is an autoimmune disease where the body doesn't produce enough insulin. Type 2 diabetes is when the body either doesn't use insulin effectively or doesn't produce enough. It's always best to consult with a doctor to understand the cause of diabetes.";  
+  } else if (userMessage.toLowerCase().includes('complications')) {
+    return "Disclaimer:I can't give specific medical advice. Uncontrolled diabetes can lead to serious complications. If you have any concerns, it's important to speak with a doctor.";
+  } else if (userMessage.toLowerCase().includes('living with diabetes')) {
+    return "Many people live healthy and fulfilling lives with diabetes. There are resources available to help with management. You can find information from trusted organizations like the American Diabetes Association (https://diabetes.org/)";
+  } 
+  else {
+    return "That's an interesting question! I'm still learning about diabetes management. Would you like to try rephrasing it, or can I suggest some resources?";
+  }
+}
+
+  userInput.addEventListener('keyup', (event) => {
+    if (event.key === 'Enter') {
+      handleUserInput();
+    }
+  });
+  
+  
+  
+ 
+ </script>
+
+
+
+
+</body>
+</html>
+
+
